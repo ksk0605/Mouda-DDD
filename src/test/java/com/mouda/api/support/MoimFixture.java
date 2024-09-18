@@ -14,21 +14,17 @@ import com.mouda.api.moim.domain.Participants;
 
 public class MoimFixture {
 
-	public static Moim create(Member member, String name) {
+	public static Moim create(String name) {
 		MoimDetail moimDetail = new MoimDetail(name, LocalDate.now().plusDays(2), LocalTime.now(),
 			"this is test moim", 10);
-		Participant host = new Participant(member, MoimRole.HOST);
 		List<Participant> participants = new ArrayList<>();
-		participants.add(host);
 		return new Moim(moimDetail, new Participants(participants));
 	}
 
-	public static Moim create(Member member, String name, LocalDate date) {
+	public static Moim create(String name, LocalDate date) {
 		MoimDetail moimDetail = new MoimDetail(name, date, LocalTime.now(),
 			"this is test moim", 10);
-		Participant host = new Participant(member, MoimRole.HOST);
 		List<Participant> participants = new ArrayList<>();
-		participants.add(host);
 		return new Moim(moimDetail, new Participants(participants));
 	}
 }

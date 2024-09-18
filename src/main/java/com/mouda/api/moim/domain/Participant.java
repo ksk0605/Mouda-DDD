@@ -16,6 +16,10 @@ public class Participant {
 		return new Participant(member, MoimRole.ATTENDANT);
 	}
 
+	public static Participant toHost(Member member) {
+		return new Participant(member, MoimRole.HOST);
+	}
+
 	public boolean hasMember(Member member) {
 		return this.member.equals(member);
 	}

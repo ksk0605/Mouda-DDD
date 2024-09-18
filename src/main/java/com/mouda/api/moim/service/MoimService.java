@@ -23,7 +23,7 @@ public class MoimService {
 		moim.validate();
 		moims.validateExistMoimName(moim);
 
-		Participant host = Participant.toAttendant(member);
+		Participant host = Participant.toHost(member);
 		moim.enter(host);
 
 		return moimRepository.append(moim, member);
